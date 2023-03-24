@@ -1,0 +1,38 @@
+ {
+    "Home":{
+        "title":"Home",
+        "img":"",
+        "options":
+    [
+        {
+            "Individual":{
+                "title":"Individual",
+                "img":"individual.png",
+                "options":[{
+                        "Offer":{
+                            "title":"Offer",
+                            "options":"",
+                            "img":"offer.png"
+                        }
+                    },
+                    {
+                        "Ask":{
+                            "title":"Ask",
+                            "options":"",
+                            "img":"ask.png"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "Business":{
+                "title":"Business",
+                "img":"business.png",
+                "url":"login"
+            }
+        }
+    ]
+}
+}
+

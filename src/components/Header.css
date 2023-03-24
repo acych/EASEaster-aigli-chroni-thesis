@@ -1,0 +1,15 @@
+.header-section{
+    padding-top: 2%;
+}
+.logo-intro{
+    padding-left: 5%;
+    text-align: center;
+}
+.intro{
+    font-family: 'Vast-Shadow';
+    color: var(--ease-red);
+    font-size: 28px;
+    margin: 10px auto;
+    max-width: 400px;
+    line-height: 32px;
+}

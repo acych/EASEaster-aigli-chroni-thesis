@@ -1,13 +1,15 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+    font-family: 'Comfortaa';
+    src: local('Comfortaa'), url(./fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Vast-Shadow';
+    src: local('Vast_Shadow'), url(./fonts/Vast_Shadow/VastShadow-Regular.ttf) format('truetype');
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+    --ease-yellow: #FFC070;
+    --ease-light-yellow: #FFEDD5;
+    --ease-red: #A45E5E;
+    --ease-light-red: #D1A599;
 }

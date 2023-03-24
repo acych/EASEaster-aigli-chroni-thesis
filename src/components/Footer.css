@@ -1,0 +1,36 @@
+.footer{
+    background-color: var(--ease-light-yellow);
+    padding: 2% 0;
+    color: var(--ease-red);
+    font-family: 'Comfortaa';
+}
+
+.footer-rights{
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+.footer-social{
+    width: 70%;
+}
+
+.footer-social .col{
+    padding-right: 0;
+}
+
+.footer-title{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.footer-links{
+    color: var(--ease-red);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.footer-links:hover{
+    color: var(--ease-red);
+    text-decoration: underline;
+    font-weight: bold;
+}

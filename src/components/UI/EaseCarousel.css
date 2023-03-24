@@ -1,0 +1,20 @@
+.carousel-indicators [data-bs-target] {
+    border: 1px solid var(--ease-red);
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+}
+
+.carousel-indicators button.active {
+    background-color: var(--ease-red);
+    width: 12px;
+    height: 12px;
+}
+
+.carousel-item .carousel-caption p{
+    font-family: 'Comfortaa';
+}
+
+.carousel-item .carousel-caption h3{
+    font-family: 'Vast-Shadow';
+}
