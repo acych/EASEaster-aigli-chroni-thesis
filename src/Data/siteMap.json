@@ -1,38 +1,69 @@
- {
-    "Home":{
-        "title":"Home",
-        "img":"",
-        "options":
-    [
-        {
-            "Individual":{
-                "title":"Individual",
-                "img":"individual.png",
-                "options":[{
-                        "Offer":{
-                            "title":"Offer",
-                            "options":"",
-                            "img":"offer.png"
-                        }
-                    },
-                    {
-                        "Ask":{
-                            "title":"Ask",
-                            "options":"",
-                            "img":"ask.png"
-                        }
-                    }
-                ]
-            }
+{
+    "title" : "HOME",
+    "subtitle" : "I AM",
+    "img":"",
+    "options":[
+    {
+            "title": "INDIVIDUAL",
+            "subtitle": "I WANT TO",
+            "img": "individual.png",
+            "options": [
+                {
+                    "title": "OFFER",
+                    "subtitle": "WHERE AND WHAT",
+                    "img": "offer.png"
+                },
+                {
+                    "title": "FIND",
+                    "subltitle": "WHERE AND WHAT",
+                    "img": "find.png"
+                }
+            ]
         },
         {
-            "Business":{
-                "title":"Business",
-                "img":"business.png",
-                "url":"login"
+            "title": "ORGANIZATION",
+            "img": "organization.png",
+            "options":
+            {
+                "loggedin": {
+                    "subtitle": "SELECT",
+                    "options":[
+                        {
+                            "title":"PROJECTS",
+                            "subtitle":"PROJECTS",
+                            "img":"projects.png",
+                            "options":[
+                                {
+                                    "title":"NEW",
+                                    "subtitle":"CREATE NEW PROJECT",
+                                    "img":"new.png"
+                                },
+                                {
+                                    "title": "ONGOING",
+                                    "subtitle": "ONGOING PROJECTS",
+                                    "img": "ongoing.png"
+                                },
+                                {
+                                    "title":"COMPLETED",
+                                    "subtitle":"COMPLETED PROJECTS",
+                                    "img": "completed.png"
+                                },
+                                {
+                                    "title": "Log out"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "PROFILE",
+                            "img": "individual.png"
+                        }
+                    ]
+                },
+                "loggedout":{
+                    "title":"",
+                    "subtitle":"LOG IN OR REGISTER"
+                }
             }
         }
     ]
 }
-}
-

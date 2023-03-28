@@ -1,0 +1,12 @@
+{
+    "users":
+    [{
+        "email":"email@email.com",
+        "password":"password",
+        "ID": "123456789",
+        "phone": "6912345678",
+        "address": "My Address 10",
+        "city": "Athens",
+        "postal-code": "12345"
+    }]
+}

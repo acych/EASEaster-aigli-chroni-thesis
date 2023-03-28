@@ -1,5 +1,30 @@
 .choices-container{
-    margin-top: 10%;
-    margin-bottom: 10%;
+    margin-top: 12%;
+    margin-bottom: 12%;
     justify-content: space-evenly;
+}
+
+.ease-img{
+    display: block;
+    margin: 0 auto 10px;
+    max-width: 55px;
+    max-height: 55px;
+}
+
+.ease-button{
+    width: 300px;
+    background-color: var(--ease-red);
+    color: var(--ease-yellow);
+    font-weight: bold;
+    border: none;
+    font-family: 'Vast-Shadow';
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 6px 0px rgba(61,61,61,0.75);
+    -webkit-box-shadow: 0px 3px 6px 0px rgba(61,61,61,0.75);
+    -moz-box-shadow: 0px 3px 6px 0px rgba(61,61,61,0.75);
+}
+
+.choices-container .col{
+    text-align: center;
 }

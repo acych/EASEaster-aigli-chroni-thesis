@@ -1,0 +1,13 @@
+.ease-subtitle{
+    color: var(--ease-red);
+    background-color: var(--ease-yellow);
+    font-family: Comfortaa;
+    margin-top: 20px;
+}
+
+.ease-subtitle-inner{
+    padding: 10px 0;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}

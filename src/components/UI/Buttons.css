@@ -1,0 +1,15 @@
+.log-out-button{
+    text-align: right;
+    background-color: var(--ease-yellow);
+    border: none;
+    font-family: Vast-Shadow;
+    color: var(--ease-red);
+    position: absolute;
+    right: 10%;
+    top: -60%;
+    border-radius: 8px;
+    padding: 5px 10px;
+    box-shadow: 0px 3px 6px 0px rgba(61,61,61,0.75);
+    -webkit-box-shadow: 0px 3px 6px 0px rgba(61,61,61,0.75);
+    -moz-box-shadow: 0px 3px 6px 0px rgba(61,61,61,0.75);
+}

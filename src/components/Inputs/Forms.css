@@ -1,0 +1,62 @@
+.input-form{
+    margin: 10% auto;
+    text-align: center;
+    width: 40%;
+}
+  
+.input-form-item{
+    font-family: Comfortaa;
+    border: 1px solid var(--ease-red);
+    border-radius: 10px;
+    display: block;
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 5px 20px;
+}
+.input-form-item:focus-visible{
+    outline: 2px solid var(--ease-red);
+}
+
+.input-form-item::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--ease-red);
+    opacity: 1; /* Firefox */
+}
+  
+.input-form-item:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: var(--ease-red);
+}
+  
+.input-form-item::-ms-input-placeholder { /* Microsoft Edge */
+    color: var(--ease-red);
+}
+
+
+.input-form-buttons{
+    margin: 10% auto;
+    width: 100%;
+    font-family: Vast-Shadow;
+}
+.input-form-buttons .col{
+    padding: 0;
+}
+
+.cancel-button, .submit-button{
+    border: none;
+    padding: 5px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 6px 0px rgba(61,61,61,0.75);
+    -webkit-box-shadow: 0px 3px 6px 0px rgba(61,61,61,0.75);
+    -moz-box-shadow: 0px 3px 6px 0px rgba(61,61,61,0.75);
+}
+
+.cancel-button{
+    float: left;
+    color: var(--ease-red);
+    background-color: var(--ease-yellow);
+}
+
+.submit-button{
+    color: var(--ease-yellow);
+    background-color: var(--ease-red);
+    float: right;
+}

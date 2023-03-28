@@ -2,7 +2,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 import logo from "../images/logo.png";
 import "./Header.css"
 import EaseCarousel from './UI/EaseCarousel';
-
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
