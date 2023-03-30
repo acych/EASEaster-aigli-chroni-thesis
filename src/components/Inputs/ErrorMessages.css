@@ -4,6 +4,7 @@
     color: var(--ease-red);
     background-color: var(--ease-light-yellow);
     padding: 5px 10px;
+    margin-bottom: 10px;
 }
 
 .error-message::before{

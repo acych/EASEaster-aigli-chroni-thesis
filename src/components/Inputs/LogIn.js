@@ -2,17 +2,19 @@ import { useState } from "react";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import "./Forms.css";
-import Users from '../../Data/users';
-import ErrorMessages from "../UI/ErrorMessages";
+import ErrorMessages from "./ErrorMessages";
 
 const LogIn = (props) => {
-    const users = Users.users;
+    const users = props.users;
     const [loginInputValues,setLoginInputValues] = useState({
         email : '',
         password: '',
         showError: false
     })
 
+    const clickRegisterHandler = () =>{
+        props.onRegister();
+    }
     const loginHandler = (event) => {
         event.preventDefault();
         let foundUser = users.find(obj=> obj.email===loginInputValues.email && obj.password===loginInputValues.password)
@@ -54,6 +56,7 @@ const LogIn = (props) => {
             }
         });
     }
+
     return(
         <form onSubmit={loginHandler} className="input-form">
             <input type="text" placeholder="Email or tax-ID" value={loginInputValues.email} className="input-form-item" onInput={emailInputHandler} />
@@ -61,7 +64,7 @@ const LogIn = (props) => {
             <ErrorMessages visible={loginInputValues.showError} message={"Wrong email or password"}/>
             <Row className="input-form-buttons">
                 <Col>
-                   <button className="cancel-button" data-title="cancel" type="button">REGISTER</button>
+                   <button className="cancel-button" onClick={clickRegisterHandler} data-title="cancel" type="button">REGISTER</button>
                 </Col>
                 <Col>
                     <button type="submit" className="submit-button" data-title="login">LOGIN</button>

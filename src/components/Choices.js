@@ -7,15 +7,22 @@ import SiteMapObjects from '../Data/siteMap';
 import LogOutButton from "./UI/LogOutButton";
 import LogIn from "./Inputs/LogIn";
 import EaseSubtitle from "./UI/EaseSubtitle";
+import Registration from "./Inputs/Registration";
+import Users from '../Data/users';
+import jsonfile from 'jsonfile';
+
 
 const Choices = () => {
+
+    const [users,setUserData] = useState(Users.users);
     const [state,setOption] = useState({
             options: SiteMapObjects.options,
             isLoggedIn: "false",
             showbuttons: "true",
+            register: "false",
             subtitle: SiteMapObjects.subtitle
         }
-        );
+    );
 
     const EaseClickHandler = (e) => {
         if(e.target.dataset.title==="ORGANIZATION"){
@@ -57,6 +64,25 @@ const Choices = () => {
         });
     }
 
+    const validRegistrationHandler = (userInfo) =>{
+        setOption((prevState) => {
+            return{...prevState,
+                showbuttons: "true",
+                isLoggedIn: "true",
+                options:prevState.options.find(obj => obj.title==="ORGANIZATION").options.loggedin.options,
+                subtitle:"WHAT NEXT"
+            }
+        });
+        setUserData((prevState) => {
+            return{...prevState,
+                userInfo
+            }
+        });
+        jsonfile.writeFile('../Data/users.json', users, function (err) {
+            if (err) console.error(err);
+          });
+    }
+
     const logOutHandler = () => {
         setOption((prevState) => {
             return{...prevState,
@@ -67,7 +93,14 @@ const Choices = () => {
             }
         });
     }
-
+    const registerHandler = () =>{
+        setOption((prevState) => {
+            return{...prevState,
+                showbuttons: "false",
+                register: "true"
+            }
+        });
+    }
 
     if(state.showbuttons==="true"){
         return(
@@ -89,12 +122,22 @@ const Choices = () => {
             </div>
         );
     }
+    else if(state.register==="true" && state.showbuttons==="false"){
+        return(
+        <div>
+            <EaseSubtitle title={"REGISTER"} />
+            <EaseContainer>
+                <Registration onValidRegistration={validRegistrationHandler} users={users}/>
+            </EaseContainer>
+        </div>
+        )
+    }
     else{
        return(
         <div>
             <EaseSubtitle title={state.subtitle} />
             <EaseContainer>
-                <LogIn onLogin={onLoginHandler}/>
+                <LogIn users={users} onRegister={registerHandler} onLogin={onLoginHandler}/>
             </EaseContainer>
         </div>)
     }
