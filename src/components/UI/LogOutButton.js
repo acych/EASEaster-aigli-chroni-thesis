@@ -5,7 +5,7 @@ const LogOutButton = (props) => {
         props.onLogout();
     }
     
-    if(props.isloggedin==="true"){
+    if(props.isloggedin){
         return     <button onClick={onClickLogoutHander}  className="log-out-button" type="button">Log Out</button>
     }
     else{

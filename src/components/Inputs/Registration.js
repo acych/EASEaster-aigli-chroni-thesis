@@ -125,7 +125,7 @@ const Registration = (props) =>{
             setIdValidation(false);
         }
         if(registrationInfo.name!=='' && registrationInfo.taxID!=='' && registrationInfo.phone!=='' && registrationInfo.address!=='' && registrationInfo.city!=='' && registrationInfo.postalCode!==''
-        && registrationInfo.email!=='' && registrationInfo.password!='' && !idInvalid && !emailInvalid && !passwordValidation.isInvalid){
+        && registrationInfo.email!=='' && registrationInfo.password!=='' && !idInvalid && !emailInvalid && !passwordValidation.isInvalid){
             props.onValidRegistration(registrationInfo);
         }
     }

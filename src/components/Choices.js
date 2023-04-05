@@ -2,31 +2,37 @@ import EaseContainer from "./UI/EaseContainer";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './Choices.css';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SiteMapObjects from '../Data/siteMap';
 import LogOutButton from "./UI/LogOutButton";
 import LogIn from "./Inputs/LogIn";
 import EaseSubtitle from "./UI/EaseSubtitle";
 import Registration from "./Inputs/Registration";
 import Users from '../Data/users';
-import jsonfile from 'jsonfile';
 
 
 const Choices = () => {
 
     const [users,setUserData] = useState(Users.users);
+    const  [isLoggedIn,setIsLoggedIn] = useState(false);
     const [state,setOption] = useState({
             options: SiteMapObjects.options,
-            isLoggedIn: "false",
             showbuttons: "true",
             register: "false",
             subtitle: SiteMapObjects.subtitle
         }
     );
 
+
+    useEffect(() => {
+        const isLoggedInInfo = localStorage.getItem('isLoggedIn');
+        if(isLoggedInInfo==='1'){
+            setIsLoggedIn(true);
+        }
+    },[])
     const EaseClickHandler = (e) => {
         if(e.target.dataset.title==="ORGANIZATION"){
-            if(state.isLoggedIn==="true"){
+            if(isLoggedIn){
                 setOption((prevState) => {
                     return{...prevState,
                         options:prevState.options.find(obj => obj.title===e.target.dataset.title).options.loggedin.options,
@@ -57,41 +63,40 @@ const Choices = () => {
         setOption((prevState) => {
             return{...prevState,
                 showbuttons: "true",
-                isLoggedIn: "true",
                 options:prevState.options.find(obj => obj.title==="ORGANIZATION").options.loggedin.options,
                 subtitle:"WHAT NEXT"
             }
         });
+        localStorage.setItem('isLoggedIn','1')
+        setIsLoggedIn(true);
     }
 
     const validRegistrationHandler = (userInfo) =>{
         setOption((prevState) => {
             return{...prevState,
                 showbuttons: "true",
-                isLoggedIn: "true",
                 options:prevState.options.find(obj => obj.title==="ORGANIZATION").options.loggedin.options,
                 subtitle:"WHAT NEXT"
             }
         });
+        setIsLoggedIn(true);
         setUserData((prevState) => {
             return{...prevState,
                 userInfo
             }
         });
-        jsonfile.writeFile('../Data/users.json', users, function (err) {
-            if (err) console.error(err);
-          });
     }
 
     const logOutHandler = () => {
         setOption((prevState) => {
             return{...prevState,
                 options: SiteMapObjects.options,
-                isLoggedIn: "false",
                 showbuttons: "true",
                 subtite: SiteMapObjects.subtite
             }
         });
+        localStorage.removeItem('isLoggedIn');
+        setIsLoggedIn(false);
     }
     const registerHandler = () =>{
         setOption((prevState) => {
@@ -107,7 +112,7 @@ const Choices = () => {
             <div>
                 <EaseSubtitle title={state.subtitle} />
                 <EaseContainer>
-                    <LogOutButton onLogout={logOutHandler} isloggedin = {state.isLoggedIn} />
+                    <LogOutButton onLogout={logOutHandler} isloggedin = {isLoggedIn} />
                     <Row className="choices-container">
                     {state.options.map((option,index) => {
                     return <Col key={index}>
